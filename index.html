@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Becarios de la Empresa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Descubre a Nuestro Talento GenO</h1>
+        <p>Encuentra a los futuros líderes de tu equipo.</p>
+    </header>
+
+    <main>
+        <aside id="filters-sidebar">
+            <h2>Filtros</h2>
+            
+            <div class="filter-group">
+                <h3>Perfil Actual</h3>
+                <input type="text" id="filter-role" placeholder="Ej. Desarrollador, Diseñador">
+            </div>
+
+            <div class="filter-group">
+                <h3>Áreas de Interés</h3>
+                <input type="text" id="filter-interests" placeholder="Ej. IA, Marketing Digital (separar con comas)">
+                <small>¿En qué campos les gustaría crecer?</small>
+            </div>
+
+            <div class="filter-group">
+                <h3>Ubicación</h3>
+                <input type="text" id="filter-location" placeholder="Ej. Ciudad de México, Remoto">
+            </div>
+
+            <div class="filter-group">
+                <h3>Idiomas</h3>
+                <input type="text" id="filter-languages" placeholder="Ej. Inglés (nivel), Francés">
+                <small>Formato: "Idioma (nivel)", ej. "Inglés (Avanzado)"</small>
+            </div>
+
+            <button id="apply-filters-btn">Aplicar Filtros</button>
+            <button id="clear-filters-btn">Limpiar Filtros</button>
+        </aside>
+
+        <section id="candidates-grid">
+            <p>Cargando becarios...</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

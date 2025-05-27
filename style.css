@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+}
+
+main {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Para que los bordes se vean bien */
+}
+
+#filters-sidebar {
+    width: 280px;
+    padding: 20px;
+    border-right: 1px solid #eee;
+    background-color: #fcfcfc;
+    flex-shrink: 0; /* Evita que se encoja */
+}
+
+#filters-sidebar h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-group small {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 0.85em;
+}
+
+
+.filter-group h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.filter-group input[type="text"],
+.filter-group select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box; /* Incluye padding en el ancho */
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Estilos genéricos para los botones de acción */
+.btn-action {
+    background-color: #3498db; /* Color principal (azul) */
+    color: white;
+    padding: 8px 15px; /* Relleno interno */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+    text-decoration: none; /* Eliminar subrayado */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0; /* Evita que los botones se encojan en exceso */
+}
+
+.btn-action:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px); /* Efecto ligero al pasar el ratón */
+}
+
+/* Estilo específico para el botón de Aria (opcional) */
+.btn-action.btn-aria {
+    background-color: #e86b1e; /* Un color diferente (verde) */
+}
+
+.btn-action.btn-aria:hover {
+    background-color: #fa6d16;
+}
+
+#clear-filters-btn {
+    background-color: #e74c3c;
+    margin-top: 10px;
+}
+
+#clear-filters-btn:hover {
+    background-color: #c0392b;
+}
+
+
+#candidates-grid {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 20px;
+}
+
+.candidate-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.candidate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.candidate-card h3 {
+    margin-top: 0;
+    color: #3498db;
+    font-size: 1.4em;
+}
+
+.candidate-card p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.candidate-card .perfil {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.candidate-card .location {
+    font-style: italic;
+    color: #777;
+}
+
+
+.candidate-photo {
+    width: 100px; /* Tamaño de la foto */
+    height: 100px;
+    border-radius: 50%; /* Hacerla circular */
+    object-fit: cover; /* Asegura que la imagen se vea bien dentro del círculo */
+    margin-bottom: 10px; /* Espacio debajo de la foto */
+    border: 3px solid #3498db; /* Un borde pequeño */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.candidate-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: center; /* Centra el contenido, incluyendo la foto */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex; /* Para mejor control del layout interno */
+    flex-direction: column; /* Apila elementos verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos apilados */
+}
+
+.candidate-actions {
+    display: flex; /* Convierte el contenedor en un contenedor flexbox */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 15px; /* Espacio superior para separar de la info del becario */
+    flex-wrap: wrap; /* Permite que los botones salten de línea en pantallas pequeñas */
+}
+
+ .profile-image {
+        width: 200px;
+        height: 200px;
+        /*border-radius: 50%;*/
+        object-fit: cover; /* Importante para que la imagen se ajuste al círculo sin deformarse */
+        margin-bottom: 20px;
+        border: 3px solid #3498db;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    #filters-sidebar {
+        width: auto;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+    #candidates-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
